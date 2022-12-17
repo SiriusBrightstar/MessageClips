@@ -5,11 +5,14 @@ Bookmark Bot for Discord
 By SiriusBrightstar#8223
 """
 
-import os
 import logging
 import discord
 from datetime import datetime
+from dotenv import dotenv_values
 from customLogger import CustomFormatter
+
+
+envData = dotenv_values('.env')
 
 
 log = logging.getLogger("My_app")
@@ -90,4 +93,4 @@ async def on_raw_reaction_add(payload):
             log.error(
                 f'Some error detected in DM channel:\n{e}', exc_info=True)
 
-client.run(os.getenv('TOKEN_1'))
+client.run(envData['TOKEN'])
