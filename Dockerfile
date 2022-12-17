@@ -7,6 +7,7 @@ LABEL project="MessageClips"
 
 COPY messageclips/main.py /
 COPY messageclips/.env /
+COPY messageclips/customLogger.py /
 COPY requirments.txt /
 
 RUN pip3 install -r /requirments.txt
