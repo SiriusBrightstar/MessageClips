@@ -1,0 +1,15 @@
+[Unit]
+Description=Message Clips Service
+After=network.target
+
+[Service]
+User=discord_bot_user
+Group=discord_bot_user
+WorkingDirectory=/opt/message_clips/src
+ExecStart=/opt/message_clips/venv/bin/python /opt/message_clips/src/main.py
+Restart=on-failure
+
+EnvironmentFile=/etc/message_clips.env
+
+[Install]
+WantedBy=multi-user.target
